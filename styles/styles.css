@@ -8,3 +8,13 @@
 .font-inter{
   font-family: "Inter", sans-serif;
 }
+
+
+.background{
+  background-image: url('../images/bgbanner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  bottom:0;
+  width:100%;
+}
