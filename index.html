@@ -84,8 +84,8 @@
             <h2 class="text-white text-[25px] lg:text-[64px] font-black leading-[25px] lg:leading-[86px] mb-5 ">Welcome to the <br> <span class="relative text-transparent bg-clip-text bg-gradient-to-r from-[#797DFC] to-[#797dfc00] ">ReTro</span> Forum</h2>
             <p class="text-[#FFFFFFCC] text-[15px] lg:text-xl font-medium leading-[20px] lg:leading-[36px] mb-8">Share your favorite opinion and win a WP <br> Forum coffee mug!</p>
             <div class="flex relative">
-              <input class="w-[300px] lg:w-[400px] lg:h-[56px] aling-middle rounded-[50px] p-4 text-[14px] lg:text-lg" type="text" placeholder="Search here anything">
-              <button class="btn w-[121px] h-[44px] rounded-[46px] bg-[#797DFC] absolute right-[5px] lg:right-[98px] top-[2px] lg:top-1 text-white font-bold text-xl border-0">Search</button>
+              <input id="search"  class="w-[300px] lg:w-[400px] lg:h-[56px] aling-middle rounded-[50px] p-4 text-[14px] lg:text-lg" type="text" placeholder="Search here anything">
+              <button onclick="search()" class="btn w-[121px] h-[44px] rounded-[46px] bg-[#797DFC] absolute right-[5px] lg:right-[98px] top-[2px] lg:top-1 text-white font-bold text-xl border-0">Search</button>
             </div>
           </div>
 
@@ -256,7 +256,7 @@
 
       </div>
 
-      <div id="discuss" class="flex flex-col w-[374px] bg-[#12132D0D] p-8 rounded-[24px] mx-auto lg:mx-none">
+      <div id="discuss" class="flex flex-col w-[374px] h-auto bg-[#12132D0D] p-8 rounded-[24px] mx-auto lg:mx-none">
 
         <div class="flex flex-row justify-between mb-4">
           <h2>Title</h2>
@@ -286,14 +286,62 @@
 
   <!-- Third section -->
   <section class="container mx-auto mb-10">
-    <div class="bg-[#12132D] w-[370px] lg:w-[1170px] h-[480px] lg:h-[403px] rounded-[32px] mx-auto lg:mx-auto flex felx-row items-center p-8">
-      <div class="flex flex-col p-4 ">
-        <h2 class="text-[40px] text-white font-black mb-4">Join Our Forum</h2>
-        <p class="w-[652px] text-[18px] font-medium leading-[30px] text-[#CCCCCC80] mb-8">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
-        <button class="w-[232px] h-[56px] bg-[#797DFC] rounded-[50px] text-white text-xl font-bold">Registered Now</button>
+    <div class="flex flex-col lg:flex-row bg-[#12132D] w-[370px] lg:w-[1170px] h-[650px] lg:h-[403px] rounded-[32px] mx-auto lg:mx-auto items-center p-8">
+      <div class="flex flex-col p-4">
+        <h2 class="text-center lg:text-start text-[32px] lg:text-[40px] text-white font-black mb-4">Join Our Forum</h2>
+        <p class="text-center lg:text-start lg:w-[652px] text-[18px] font-medium leading-[30px] text-[#CCCCCC80] mb-8">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
+        <button class="ml-5 lg:ml-0 w-[232px] h-[56px] bg-[#797DFC] rounded-[50px] text-white text-xl font-bold">Registered Now</button>
       </div>
       <div>
         <img src="images/joinforum.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Fourth section -->
+  <section class="container mx-auto mb-10">
+    <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center">
+        <h2 class="text-[40px] font-black mb-6">Latest Posts</h2>
+        <p class="w-[690px] text-[#12132D99] text-center font-inter text-lg leading-[30px] mb-12">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+      </div>
+      <div class="flex flex-row gap-6">
+        <!-- card 1 -->
+        <div class="card w-96  bg-base-100 shadow-xl border-[1px] border-[#12132D26]">
+          <figure><img class="w-[326px] h-[190px] pt-5" src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+          <div class="flex flex-col card-body">
+            <p class="flex flex-row text-[#12132D99] gap-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+            </svg>
+            <span class="text-[#12132D99] font-[16px] ">29 January 2024</span>
+            </p>
+            <h2 class="text-[#12132D] text-lg font-extrabold leading-[30px] w-[321px]">What will a mars habitat force that impact in our daily life!!!</h2>
+            <p class="text-[16px] w-[309px] text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. </p>
+            <div class="flex flex-row">
+              <img src="images/Ellipse 1.jpg" alt="">
+              <div class="flex flex-col">
+                <p>Cameron Williamson</p>
+                <p>Unknown</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card 2 -->
+        <div class="card w-96 bg-base-100 shadow-xl">
+          <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+         
+        </div>
+        <!-- card 3 -->
+        <div class="card w-96 bg-base-100 shadow-xl">
+          <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">Shoes!</h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
