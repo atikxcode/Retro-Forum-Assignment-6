@@ -118,3 +118,46 @@ function sideShow(post){
 }
 
 
+
+// Latest post section
+
+const latestPost = document.getElementById('latest-post');
+const postCatagories = () => {
+  const url = 'https://openapi.programming-hero.com/api/retro-forum/latest-posts';
+  fetch(url)
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+    data.map((post) => {
+      console.log(post)
+      const div2 = document.createElement('div');
+      div2.classList = `card w-96  bg-base-100 shadow-xl border-[1px] border-[#12132D26]`;
+      div2.innerHTML = `
+      <figure><img class="w-[326px] h-[190px] pt-5" src="${post.cover_image}" alt="Shoes" /></figure>
+          <div class="flex flex-col card-body">
+            <p class="flex flex-row text-[#12132D99] gap-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+            </svg>
+            <span class="text-[#12132D99] font-[16px] ">${post.author.posted_date?post.author.posted_date:"No publish date"}</span>
+            </p>
+            <h2 class="text-[#12132D] text-lg font-extrabold leading-[30px] w-[321px]">${post.title}</h2>
+            <p class="text-[16px] w-[309px] text-[#12132D99]">${post.description}</p>
+            <div class="flex flex-row gap-4">
+              <img class=" w-[50px] h-[50px] rounded-[50%]" src="${post.profile_image}" alt="">
+              <div class="flex flex-col">
+                <p class="text-[16px] font-bold mb-[5px]">${post.author.name}</p>
+                <p class="text-[#12132D99] text-[14px]">${post.author.designation?post.author.designation:"Unknown"}</p>
+              </div>
+            </div>
+          </div>
+      `;
+
+      latestPost.appendChild(div2);
+    })
+  })
+}
+
+postCatagories();
+
+
+
