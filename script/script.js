@@ -131,7 +131,7 @@ const postCatagories = () => {
     data.map((post) => {
       console.log(post)
       const div2 = document.createElement('div');
-      div2.classList = `card w-96  bg-base-100 shadow-xl border-[1px] border-[#12132D26]`;
+      div2.classList = `card w-auto lg:w-96  bg-base-100 shadow-xl border-[1px] border-[#12132D26]`;
       div2.innerHTML = `
       <figure><img class="w-[326px] h-[190px] pt-5" src="${post.cover_image}" alt="Shoes" /></figure>
           <div class="flex flex-col card-body">
